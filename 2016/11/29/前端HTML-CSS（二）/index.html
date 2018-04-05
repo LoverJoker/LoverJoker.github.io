@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="HTML+CSS," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="鼠标样式 Cursor: pointer   鼠标变成小手   Cursor: default   小白  Cursor : move    移动   Cursor : text     文本输入 border-radius（圆角矩形）1Border-radius: 左上 右上  右下 左下；  顺时针   标签嵌套 块级元素  —  任何元素可以的。      行内元素  –    行内元素">
+<meta name="keywords" content="HTML+CSS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端HTML+CSS（二）">
+<meta property="og:url" content="http://yoursite.com/2016/11/29/前端HTML-CSS（二）/index.html">
+<meta property="og:site_name" content="JokerLiang">
+<meta property="og:description" content="鼠标样式 Cursor: pointer   鼠标变成小手   Cursor: default   小白  Cursor : move    移动   Cursor : text     文本输入 border-radius（圆角矩形）1Border-radius: 左上 右上  右下 左下；  顺时针   标签嵌套 块级元素  —  任何元素可以的。      行内元素  –    行内元素">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2016-11-30T10:07:23.791Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端HTML+CSS（二）">
+<meta name="twitter:description" content="鼠标样式 Cursor: pointer   鼠标变成小手   Cursor: default   小白  Cursor : move    移动   Cursor : text     文本输入 border-radius（圆角矩形）1Border-radius: 左上 右上  右下 左下；  顺时针   标签嵌套 块级元素  —  任何元素可以的。      行内元素  –    行内元素">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/11/29/前端HTML-CSS（二）/"/>
+
+
+
+
+
+  <title>前端HTML+CSS（二） | JokerLiang</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">JokerLiang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">永远年轻，永远热泪盈眶。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/29/前端HTML-CSS（二）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JokerLiang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/me.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JokerLiang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">前端HTML+CSS（二）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-29T16:22:22+08:00">
+                2016-11-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端基本功/" itemprop="url" rel="index">
+                    <span itemprop="name">前端基本功</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="鼠标样式"><a href="#鼠标样式" class="headerlink" title="鼠标样式"></a>鼠标样式</h2><ul>
+<li>Cursor: pointer   鼠标变成小手  </li>
+<li>Cursor: default   小白 </li>
+<li>Cursor : move    移动  </li>
+<li>Cursor : text     文本输入 <h2 id="border-radius（圆角矩形）"><a href="#border-radius（圆角矩形）" class="headerlink" title="border-radius（圆角矩形）"></a>border-radius（圆角矩形）</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Border-radius: 左上 右上  右下 左下；  顺时针</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="标签嵌套"><a href="#标签嵌套" class="headerlink" title="标签嵌套"></a>标签嵌套</h2><ul>
+<li>块级元素  —  任何元素可以的。     </li>
+<li>行内元素  –    行内元素  只 嵌套元素    b  u span   i -  s- P , 不能放 div 。    </li>
+<li>a 无所不能 。    a里面不能放 a    input 等<a id="more"></a>
+</li>
+</ul>
+<h2 id="Z-index-层级-div-层"><a href="#Z-index-层级-div-层" class="headerlink" title="Z-index  层级   div 层"></a>Z-index  层级   div 层</h2><ul>
+<li>只有 定位的盒子 （除了static） 才有 z-index，如果都是定位  绝对定位 他们默认的z-index  是  0   </li>
+<li>最后的一个  靠上</li>
+</ul>
+<h2 id="css两个性质"><a href="#css两个性质" class="headerlink" title="css两个性质"></a>css两个性质</h2><ul>
+<li>继承性。有一些属性给祖先元素，所有的后代元素都集成上了。哪些属性能继承：color、font-、text-、line-</li>
+<li>层叠性。层叠性是一种能力，就是处理冲突的能力。当不同选择器，对一个标签的同一个样式，有不同的值，听谁的？这就是冲突。css有着严格的处理冲突的机制：<br>1,选择上了，数权重，(id的数量，类的数量，标签的数量)。如果权重一样，谁写在后面听谁的。<br>2,没有选择上，通过继承影响的，就近原则，谁描述的近听谁的。如果描述的一样近，比如选择器权重，如果权重再一样重，谁写在后面听谁的</li>
+</ul>
+<h2 id="important标记"><a href="#important标记" class="headerlink" title="!important标记"></a>!important标记</h2><p>用来给一个属性提高权重。这个属性的权重就是无穷大。写法：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">正确的：</span><br><span class="line">	font-size:60px !important;</span><br><span class="line">错误的：</span><br><span class="line">	font-size:60px; !important;     → 不能把!important写在外面</span><br><span class="line">	font-size:60px important;      →  不能忘记感叹号</span><br></pre></td></tr></table></figure></p>
+<p>!important不影响就近原则</p>
+<h2 id="块级元素和行内元素"><a href="#块级元素和行内元素" class="headerlink" title="块级元素和行内元素"></a>块级元素和行内元素</h2><p>1,块级元素</p>
+<ul>
+<li>霸占一行，不能与其他任何元素并列</li>
+<li>能接受宽、高</li>
+<li>如果不设置宽度，那么宽度将默认变为父亲的100%。</li>
+</ul>
+<p>2,行内元素- 与其他行内元素并排</p>
+<ul>
+<li><p>不能设置宽、高。默认的宽度，就是文字的宽度。</p>
+<p>  在HTML中，我们已经将标签分过类，当时分为了：文本级、容器级。<br>  文本级：p、span、a、b、i、u、em<br>  容器级：div、h系列、li、dt、dd</p>
+<p>  CSS的分类和上面的很像，就p不一样：<br>  所有的文本级标签，都是行内元素，除了p，p是个文本级，但是是个块级元素。<br>  所有的容器级标签都是块级元素。</p>
+<h2 id="块级元素和行内元素的相互转换"><a href="#块级元素和行内元素的相互转换" class="headerlink" title="块级元素和行内元素的相互转换"></a>块级元素和行内元素的相互转换</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">	display: inline;</span><br><span class="line">	background-color: pink;</span><br><span class="line">	width: 500px;</span><br><span class="line">	height: 500px;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>上面的例子div就通过“display: inline”转成了行内元素</p>
+<ul>
+<li>此时这个div不能设置宽度、高度；</li>
+<li>此时这个div可以和别人并排了<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">span&#123;</span><br><span class="line">	display: block;</span><br><span class="line">	width: 200px;</span><br><span class="line">	height: 200px;</span><br><span class="line">	background-color: pink;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>让标签变为块级元素。此时这个标签，和一个div无异：</p>
+<ul>
+<li>此时这个span能够设置宽度、高度</li>
+<li>此时这个span必须霸占一行了，别人无法和他并排</li>
+<li>如果不设置宽度，将撑满父亲</li>
+</ul>
+<h2 id="脱离标准流的方法"><a href="#脱离标准流的方法" class="headerlink" title="脱离标准流的方法"></a>脱离标准流的方法</h2><p>css中一共有三种手段，使一个元素脱离标准文档流：</p>
+<ul>
+<li>浮动</li>
+<li>绝对定位</li>
+<li>固定定位</li>
+</ul>
+<h2 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h2><p>浮动是css里面布局用的最多的属性。浮动有三个性质</p>
+<h3 id="性质一"><a href="#性质一" class="headerlink" title="性质一"></a>性质一</h3><ul>
+<li>浮动的元素脱标<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">一个span标签不需要转成块级元素，就能够设置宽度、高度了。所以能够证明一件事儿，</span><br><span class="line">就是所有标签已经不区分行内、块了。也就是说，一旦一个元素浮动了，那么，将能够并排了，并且能够设置宽高了。</span><br><span class="line">无论它原来是个div还是个span。</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="性质二"><a href="#性质二" class="headerlink" title="性质二"></a>性质二</h3><ul>
+<li>浮动的元素互相贴靠<h3 id="性质三"><a href="#性质三" class="headerlink" title="性质三"></a>性质三</h3></li>
+<li>浮动的元素有“字围”效果<h3 id="性质四"><a href="#性质四" class="headerlink" title="性质四"></a>性质四</h3></li>
+<li>浮动的元素贴边<h3 id="原则"><a href="#原则" class="headerlink" title="原则"></a>原则</h3>　　永远不是一个东西单独浮动，浮动都是一起浮动，要浮动，大家都浮动。</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/HTML-CSS/" rel="tag"># HTML+CSS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/11/29/前端HTML-CSS（一）/" rel="next" title="前端HTML+CSS（一）">
+                <i class="fa fa-chevron-left"></i> 前端HTML+CSS（一）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/11/29/前端HTML-CSS-（三）/" rel="prev" title="前端HTML+CSS（三）">
+                前端HTML+CSS（三） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/me.jpg"
+                alt="JokerLiang" />
+            
+              <p class="site-author-name" itemprop="name">JokerLiang</p>
+              <p class="site-description motion-element" itemprop="description">永远年轻，永远热泪盈眶。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">71</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/LoverJoker" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/lover-easy-7/activities" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/2292572142/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-globe"></i>微博</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Friends
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.knight.ac.cn/" title="Knight" target="_blank">Knight</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://lzllzl.cn/" title="Zayvion" target="_blank">Zayvion</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://chen97.com/" title="Chens" target="_blank">Chens</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#鼠标样式"><span class="nav-number">1.</span> <span class="nav-text">鼠标样式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#border-radius（圆角矩形）"><span class="nav-number">2.</span> <span class="nav-text">border-radius（圆角矩形）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标签嵌套"><span class="nav-number">3.</span> <span class="nav-text">标签嵌套</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Z-index-层级-div-层"><span class="nav-number">4.</span> <span class="nav-text">Z-index  层级   div 层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#css两个性质"><span class="nav-number">5.</span> <span class="nav-text">css两个性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#important标记"><span class="nav-number">6.</span> <span class="nav-text">!important标记</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#块级元素和行内元素"><span class="nav-number">7.</span> <span class="nav-text">块级元素和行内元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#块级元素和行内元素的相互转换"><span class="nav-number">8.</span> <span class="nav-text">块级元素和行内元素的相互转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#脱离标准流的方法"><span class="nav-number">9.</span> <span class="nav-text">脱离标准流的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浮动"><span class="nav-number">10.</span> <span class="nav-text">浮动</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#性质一"><span class="nav-number">10.1.</span> <span class="nav-text">性质一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#性质二"><span class="nav-number">10.2.</span> <span class="nav-text">性质二</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#性质三"><span class="nav-number">10.3.</span> <span class="nav-text">性质三</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#性质四"><span class="nav-number">10.4.</span> <span class="nav-text">性质四</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原则"><span class="nav-number">10.5.</span> <span class="nav-text">原则</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">JokerLiang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

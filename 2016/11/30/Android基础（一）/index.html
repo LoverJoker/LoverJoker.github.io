@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Anderoid基础," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="自定义对话框123456789private void showDialog() &amp;#123;    AlertDialog.Builder builder = new AlertDialog.Builder(Blackname_Activity.this);    //要自定义对话框的样式所以调用creat方法    AlertDialog dialog = builder.create();">
+<meta name="keywords" content="Anderoid基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android基础（一）">
+<meta property="og:url" content="http://yoursite.com/2016/11/30/Android基础（一）/index.html">
+<meta property="og:site_name" content="JokerLiang">
+<meta property="og:description" content="自定义对话框123456789private void showDialog() &amp;#123;    AlertDialog.Builder builder = new AlertDialog.Builder(Blackname_Activity.this);    //要自定义对话框的样式所以调用creat方法    AlertDialog dialog = builder.create();">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2016-11-30T10:02:13.526Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android基础（一）">
+<meta name="twitter:description" content="自定义对话框123456789private void showDialog() &amp;#123;    AlertDialog.Builder builder = new AlertDialog.Builder(Blackname_Activity.this);    //要自定义对话框的样式所以调用creat方法    AlertDialog dialog = builder.create();">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/11/30/Android基础（一）/"/>
+
+
+
+
+
+  <title>Android基础（一） | JokerLiang</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">JokerLiang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">永远年轻，永远热泪盈眶。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/30/Android基础（一）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JokerLiang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/me.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JokerLiang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Android基础（一）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-30T12:36:09+08:00">
+                2016-11-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="自定义对话框"><a href="#自定义对话框" class="headerlink" title="自定义对话框"></a>自定义对话框</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">showDialog</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    AlertDialog.Builder builder = <span class="keyword">new</span> AlertDialog.Builder(Blackname_Activity.<span class="keyword">this</span>);</span><br><span class="line">    <span class="comment">//要自定义对话框的样式所以调用creat方法</span></span><br><span class="line">    AlertDialog dialog = builder.create();</span><br><span class="line">    View view = View.inflate(getApplicationContext(), R.layout.blackname_insert_dialog, <span class="keyword">null</span>);</span><br><span class="line">    <span class="comment">//将低版本的间距取消掉</span></span><br><span class="line">    dialog.setView(view,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">    dialog.show();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="ListView的优化"><a href="#ListView的优化" class="headerlink" title="ListView的优化"></a>ListView的优化</h2><h3 id="ConvertView的复用"><a href="#ConvertView的复用" class="headerlink" title="ConvertView的复用"></a>ConvertView的复用</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">if</span> (view==<span class="keyword">null</span>)&#123;</span><br><span class="line">     <span class="comment">//返回一个条目所对应的View对象 (第三个参数为是否要挂在到父控件上 ,</span></span><br><span class="line">	一般传入<span class="keyword">null</span>)</span><br><span class="line">     view = View.inflate(Blackname_Activity.<span class="keyword">this</span>, R.layout.listview_blackname, <span class="keyword">null</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="findViewById的复用-ViewHolder的使用"><a href="#findViewById的复用-ViewHolder的使用" class="headerlink" title="findViewById的复用 ViewHolder的使用"></a>findViewById的复用 ViewHolder的使用</h3><a id="more"></a>
+<p>1,创建一个静态的ViewHolder对象，类里面创建每个ListView条目中的控件的名称<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">ViewHolder</span></span>&#123;</span><br><span class="line">    TextView tv_listView_blackname_phone;</span><br><span class="line">    TextView tv_listView_blackname_mode;</span><br><span class="line">    ImageView iv_blackname_del;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>2,生成ViewHolder对象<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ViewHolder viewHolder = <span class="keyword">new</span> ViewHolder();</span><br></pre></td></tr></table></figure></p>
+<p>完整版<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">    listView优化</span><br><span class="line">        <span class="number">1</span>:复用convertView</span><br><span class="line">        <span class="number">2</span>:复用ViewHolder让其减少findViewById()次数</span><br><span class="line">        <span class="number">3</span>:<span class="keyword">static</span> ViewHolder</span><br><span class="line">        <span class="number">4</span>:分页算法</span><br><span class="line"></span><br><span class="line">模版代码</span><br><span class="line">          ViewHolder  viewHolder = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">if</span>(convertView == <span class="keyword">null</span>)&#123;</span><br><span class="line">        viewHolder = <span class="keyword">new</span> ViewHolder();</span><br><span class="line">        convertView = View.inflate();</span><br><span class="line">        viewHolder.text1 = convertView.findViewById(R.id.text1);</span><br><span class="line">        convertView.setTag(viewHolder);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        viewHolder = (ViewHolder)convertView.getTag();</span><br><span class="line">    &#125;</span><br><span class="line">    viewHolder.text1.setText(<span class="string">"文本内容"</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">ViewHolder</span></span>&#123;</span><br><span class="line">        TextView text1;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="将流转换为字符串"><a href="#将流转换为字符串" class="headerlink" title="将流转换为字符串"></a>将流转换为字符串</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">  <span class="comment">//这个方法是将流类型转为字符串对象</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StreamUtil</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//前面类的临时数据可以通过参数的方式传进来</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">streamToString</span><span class="params">(InputStream is)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//1,在读取的过程中,将读取的内容存储值缓存中,然后一次性的转换成字符串返回</span></span><br><span class="line">        ByteArrayOutputStream bos = <span class="keyword">new</span> ByteArrayOutputStream();</span><br><span class="line">        <span class="comment">//2,读流操作,读到没有为止(循环)</span></span><br><span class="line">        <span class="keyword">byte</span>[] buffer = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</span><br><span class="line">        <span class="comment">//3,记录读取内容的临时变量</span></span><br><span class="line">        <span class="keyword">int</span> temp = -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">while</span>((temp = is.read(buffer))!=-<span class="number">1</span>)&#123;</span><br><span class="line">                bos.write(buffer, <span class="number">0</span>, temp);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//返回读取数据</span></span><br><span class="line">            <span class="keyword">return</span> bos.toString();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                is.close();</span><br><span class="line">                bos.close();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="服务端JSON写法"><a href="#服务端JSON写法" class="headerlink" title="服务端JSON写法"></a>服务端JSON写法</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">   <span class="string">"version_name"</span>: <span class="string">"2.0"</span>,</span><br><span class="line">   <span class="string">"version_code"</span>: <span class="number">2</span>,</span><br><span class="line">   <span class="string">"description"</span>: <span class="string">"最新版手机卫士,快来下载体验吧!"</span>,</span><br><span class="line">   <span class="string">"download_url"</span>: <span class="string">"http://10.0.2.2:8080/mobilesafe2.0.apk"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="JSON解析（不适用Gson）"><a href="#JSON解析（不适用Gson）" class="headerlink" title="JSON解析（不适用Gson）"></a>JSON解析（不适用Gson）</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">        <span class="comment">//1：封装URL地址</span></span><br><span class="line">        URL url= <span class="keyword">new</span> URL(<span class="string">"http://192.168.1.101:8080/update.json"</span>);</span><br><span class="line">        <span class="comment">//2:开启链接</span></span><br><span class="line">        HttpURLConnection connection = (HttpURLConnection) url.openConnection();</span><br><span class="line">        <span class="comment">//3:设置常见请求参数（请求头）</span></span><br><span class="line">        connection.setConnectTimeout(<span class="number">3000</span>);<span class="comment">//这个是请求超时</span></span><br><span class="line">        connection.setReadTimeout(<span class="number">3000</span>);<span class="comment">//这个是读取超时  意思是和 服务器连上了，但不能读取数据</span></span><br><span class="line">        connection.setRequestMethod(<span class="string">"POST"</span>);<span class="comment">//这里是设置请求方式  GET或者POST   默认就是GET请求如果你是GET请求可以不写</span></span><br><span class="line">        <span class="keyword">int</span> Code =  connection.getResponseCode();<span class="comment">//获取请求码</span></span><br><span class="line">        System.out.println(<span class="string">"--------------------------------------"</span>+Code);</span><br><span class="line">        <span class="keyword">if</span>(Code==<span class="number">200</span>)&#123;</span><br><span class="line">            <span class="comment">//以流的形式将数据获取下来</span></span><br><span class="line">            InputStream is = connection.getInputStream();</span><br><span class="line">            <span class="comment">//将流转换为字符串。因为这个方法很常用，可以将它封装起来</span></span><br><span class="line">            String json = StreamUtil.streamToString(is);</span><br><span class="line">            Log.d(<span class="string">"json"</span>,json);</span><br><span class="line"></span><br><span class="line">            <span class="comment">//下面进行JSON的解析</span></span><br><span class="line">            JSONObject jsonObject = <span class="keyword">new</span> JSONObject(json);</span><br><span class="line">            downloadUrl = jsonObject.getString(<span class="string">"downloadUrl"</span>);</span><br><span class="line">            String versionCode = jsonObject.getString(<span class="string">"versionCode"</span>);</span><br><span class="line">            String versionName = jsonObject.getString(<span class="string">"versionName"</span>);</span><br><span class="line">            versopmDes = jsonObject.getString(<span class="string">"versopmDes"</span>);</span><br><span class="line"></span><br><span class="line">            <span class="comment">//下面是测试是否正常解析JSON</span></span><br><span class="line">            Log.d(<span class="string">"json"</span>,downloadUrl);</span><br><span class="line">            Log.d(<span class="string">"json"</span>,versionCode);</span><br><span class="line">            Log.d(<span class="string">"json"</span>,versionName);</span><br><span class="line">            Log.d(<span class="string">"json"</span>,versopmDes);</span><br><span class="line"></span><br><span class="line">            <span class="comment">//如果服务器端比本地的版本高则提示用户更新</span></span><br><span class="line">            <span class="keyword">if</span> (mLocalVersioncode&lt;Integer.parseInt(versionCode))&#123;</span><br><span class="line">                <span class="comment">//提示用户更新</span></span><br><span class="line">                msg.what=UPDATE_VERSION;</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">//否则直接进入HOME界面</span></span><br><span class="line">                msg.what=ENTER_HOME;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">        System.out.println(<span class="string">"进入了CATH"</span>+e);</span><br><span class="line">        <span class="comment">//发生异常</span></span><br><span class="line">        msg.what = EXCEPTION;</span><br><span class="line">    &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">        <span class="keyword">long</span> Endm = System.currentTimeMillis();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Thread.sleep(<span class="number">3000</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        mHandler.sendMessage(msg);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="使用开源框架Xutils下载"><a href="#使用开源框架Xutils下载" class="headerlink" title="使用开源框架Xutils下载"></a>使用开源框架Xutils下载</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">HttpUtils httpUtils = <span class="keyword">new</span> HttpUtils();</span><br><span class="line">            <span class="comment">//发送请求,传递参数(下载地址,下载应用放置位置)</span></span><br><span class="line">            httpUtils.download(downloadUrl,Path,<span class="keyword">new</span> RequestCallBack&lt;File&gt;() &#123;</span><br><span class="line">                <span class="meta">@Override</span></span><br><span class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onSuccess</span><span class="params">(ResponseInfo&lt;File&gt; fileResponseInfo)</span> </span>&#123;</span><br><span class="line">                    <span class="comment">//下载成功执行的方法</span></span><br><span class="line">                    File apk = fileResponseInfo.result;</span><br><span class="line">                    <span class="comment">//现在开始安装</span></span><br><span class="line">                    install(apk);</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="meta">@Override</span></span><br><span class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onFailure</span><span class="params">(HttpException e, String s)</span> </span>&#123;</span><br><span class="line">                    <span class="comment">//下载失败执行的方法</span></span><br><span class="line">                    Toast.makeText(Splash.<span class="keyword">this</span>,<span class="string">"请检查网络设置"</span>,Toast.LENGTH_SHORT).show();</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="meta">@Override</span></span><br><span class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onStart</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                    <span class="comment">//开始下载执行的方法</span></span><br><span class="line">                    Toast.makeText(Splash.<span class="keyword">this</span>,<span class="string">"开始下载"</span>,Toast.LENGTH_SHORT).show();</span><br><span class="line">                    <span class="keyword">super</span>.onStart();</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="meta">@Override</span></span><br><span class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onLoading</span><span class="params">(<span class="keyword">long</span> total, <span class="keyword">long</span> current, <span class="keyword">boolean</span> isUploading)</span> </span>&#123;</span><br><span class="line">                    <span class="comment">//下载过程中执行的方法，以后可以放下载的进度</span></span><br><span class="line">                    <span class="keyword">super</span>.onLoading(total, current, isUploading);</span><br><span class="line">                &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="监听来电事件"><a href="#监听来电事件" class="headerlink" title="监听来电事件"></a>监听来电事件</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>:拿到电话管理器</span><br><span class="line">  TelePMG = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);</span><br><span class="line"><span class="number">2</span>:创建电话监听器类继承PhoneStateListener</span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">MyPhoneStateListener</span> <span class="keyword">extends</span> <span class="title">PhoneStateListener</span></span>&#123;</span><br><span class="line">        <span class="comment">//重写电话状态改变的方法</span></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCallStateChanged</span><span class="params">(<span class="keyword">int</span> state, String incomingNumber)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">switch</span> (state)&#123;</span><br><span class="line">                <span class="keyword">case</span> TelephonyManager.CALL_STATE_IDLE:</span><br><span class="line">                    <span class="comment">//电话空闲状态</span></span><br><span class="line">                    System.out.println(<span class="string">"空闲状态"</span>);</span><br><span class="line">                    <span class="keyword">if</span>(mWindowManager!=<span class="keyword">null</span>&amp;&amp;toast_view!=<span class="keyword">null</span>)&#123;</span><br><span class="line">                        <span class="comment">//挂断电话的时候移除吐司</span></span><br><span class="line">                        mWindowManager.removeView(toast_view);</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> TelephonyManager.CALL_STATE_OFFHOOK:</span><br><span class="line">                    <span class="comment">//忙碌状态，就是占线</span></span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> TelephonyManager.CALL_STATE_RINGING:</span><br><span class="line">                    <span class="comment">//来电状态</span></span><br><span class="line">                    System.out.println(<span class="string">"来电了号码是"</span>+incomingNumber);</span><br><span class="line">                    <span class="comment">//来电后打印吐司</span></span><br><span class="line">                    showToast(incomingNumber);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">super</span>.onCallStateChanged(state, incomingNumber);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="number">3</span>:创建电话监听器的对象</span><br><span class="line">  myPhoneStateListener = <span class="keyword">new</span> MyPhoneStateListener();</span><br><span class="line"><span class="number">4</span>:使用电话管理器的listen方法绑定监听器</span><br><span class="line">  TelePMG.listen(myPhoneStateListener,PhoneStateListener.LISTEN_CALL_STATE);</span><br><span class="line"><span class="number">5</span>:使用完毕后记得用CLOSE方法关闭</span><br></pre></td></tr></table></figure>
+<h2 id="监听用户手势"><a href="#监听用户手势" class="headerlink" title="监听用户手势"></a>监听用户手势</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>:创建监听用户手势的类（第二个参数传入监听用户手势的监听器）</span><br><span class="line">  GestureDetector gestureDetector = <span class="keyword">new</span> GestureDetector(<span class="keyword">this</span>,SimpleOnGestureListener)</span><br><span class="line"><span class="number">2</span>:实现监听器的onFling方法（手势起点参数，手势移动当前的参数，每秒x轴方向移动的像素，每秒y轴方向移动的像素）</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onFling</span><span class="params">(MotionEvent e1, MotionEvent e2, <span class="keyword">float</span> velocityX, <span class="keyword">float</span> velocityY)</span> </span>&#123;</span><br><span class="line">                <span class="keyword">if</span> (e1.getX()-e2.getX()&gt;<span class="number">0</span>)&#123;</span><br><span class="line">                    <span class="comment">//下一页</span></span><br><span class="line">                    String phone = et_phone_number.getText().toString();</span><br><span class="line">                    <span class="keyword">if</span>(!TextUtils.isEmpty(phone))&#123;</span><br><span class="line">                        Intent intent = <span class="keyword">new</span> Intent(Set_up3.<span class="keyword">this</span>, Set_up4.class);</span><br><span class="line">                        startActivity(intent);</span><br><span class="line">                        SpUtil.PutString(getApplicationContext(), FianlMath.CONTACT_MAN, phone);</span><br><span class="line">                        finish();</span><br><span class="line">                        overridePendingTransition(R.anim.next_anim_in,R.anim.next_anim_out);</span><br><span class="line">                    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                        Toast.makeText(Set_up3.<span class="keyword">this</span>,<span class="string">"请输入联系人"</span>,Toast.LENGTH_SHORT).show();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;<span class="keyword">else</span> <span class="keyword">if</span> (e1.getX()-e2.getX()&lt;<span class="number">0</span>)&#123;</span><br><span class="line">                    <span class="comment">//上一页</span></span><br><span class="line">                    Intent intent = <span class="keyword">new</span> Intent(Set_up3.<span class="keyword">this</span>, Set_up2.class);</span><br><span class="line">                    startActivity(intent);</span><br><span class="line">                    finish();</span><br><span class="line">                    overridePendingTransition(R.anim.up_anim_in,R.anim.up_anim_out);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">super</span>.onFling(e1, e2, velocityX, velocityY);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">重写ontouchevent方法（这个方法用来捕捉用户的手势）</span><br><span class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onTouchEvent</span><span class="params">(MotionEvent event)</span> </span>&#123;</span><br><span class="line">        gestureDetector.onTouchEvent(event);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">super</span>.onTouchEvent(event);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Android中数据库的创建"><a href="#Android中数据库的创建" class="headerlink" title="Android中数据库的创建"></a>Android中数据库的创建</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>:写类继承SQLiteOpenHelper</span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BlackNamedb</span> <span class="keyword">extends</span> <span class="title">SQLiteOpenHelper</span></span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">BlackNamedb</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(context, <span class="string">"blackname.db"</span>, <span class="keyword">null</span>, <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(SQLiteDatabase sqLiteDatabase)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//执行SQL语句</span></span><br><span class="line">        sqLiteDatabase.execSQL(<span class="string">"create table blackname"</span> +</span><br><span class="line">                <span class="string">"(_id integer primary key autoincrement,phone varchar(20),mode integer);"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onUpgrade</span><span class="params">(SQLiteDatabase sqLiteDatabase, <span class="keyword">int</span> i, <span class="keyword">int</span> i2)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="number">2</span>：重新写类私有化构造方法</span><br><span class="line"><span class="number">3</span>：申明一个静态的当前类对象</span><br><span class="line"><span class="number">3</span>：提供一个静态方法如果当前类的对象为空则要创建一个新的对象</span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BlacknameJDBC</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> BlackNamedb blackNamedb;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//1:私有化构造方法</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">BlacknameJDBC</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line">        blackNamedb = <span class="keyword">new</span> BlackNamedb(context);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//2:申明当前类的对象。必须是静态的</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> BlacknameJDBC blacknameJDBC = <span class="keyword">null</span>;</span><br><span class="line">    <span class="comment">//3:提供一个静态方法如果当前类的对象为空则要创建一个新的对象</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> BlacknameJDBC <span class="title">getInstance</span><span class="params">(Context context)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (blacknameJDBC==<span class="keyword">null</span>)&#123;</span><br><span class="line">            blacknameJDBC = <span class="keyword">new</span> BlacknameJDBC(context);</span><br><span class="line">            <span class="keyword">return</span> blacknameJDBC;</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> blacknameJDBC;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="number">4</span>：提供增删改查等操作</span><br><span class="line">     <span class="comment">/**</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> phone 拦截的电话</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> mode 拦截的类型 1是短信  2是电话  3是所有</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insert</span><span class="params">(String phone , String mode)</span></span>&#123;</span><br><span class="line">        <span class="comment">//开启数据库做写入操作</span></span><br><span class="line"></span><br><span class="line">        SQLiteDatabase writableDatabase = blackNamedb.getWritableDatabase();</span><br><span class="line">        <span class="comment">//准备ContentValues 封装</span></span><br><span class="line">        ContentValues values = <span class="keyword">new</span> ContentValues();</span><br><span class="line">        values.put(<span class="string">"phone"</span>,phone);</span><br><span class="line">        values.put(<span class="string">"mode"</span>,mode);</span><br><span class="line">        <span class="comment">//进行写入操作 方法接收参数（表的名称，没有给值时，将null插入数据库，内容 ContentValues 用这个封装）；</span></span><br><span class="line">        writableDatabase.insert(<span class="string">"blackname"</span>,<span class="keyword">null</span>,values);</span><br><span class="line"></span><br><span class="line">        blackNamedb.close();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> phone  想要删除的电话号码</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">delect</span><span class="params">(String phone)</span></span>&#123;</span><br><span class="line">        SQLiteDatabase writableDatabase = blackNamedb.getWritableDatabase();</span><br><span class="line">        <span class="comment">//进行删除操作（表的名称，要删除的字段名称，要删除的字段值,要使用String类型的数组）</span></span><br><span class="line">        writableDatabase.delete(<span class="string">"blackname"</span>,<span class="string">"phone=?"</span>,<span class="keyword">new</span> String[]&#123;phone&#125;);</span><br><span class="line">        writableDatabase.close();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     *  根据电话号码去更新拦截模式</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> phone 要更新的电话</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> mode 要更新为的模式(1:短信    2:电话    3:拦截所有(短信+电话)</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">updata</span><span class="params">(String phone,String mode)</span></span>&#123;</span><br><span class="line">        SQLiteDatabase writableDatabase = blackNamedb.getWritableDatabase();</span><br><span class="line">        <span class="comment">//准备数据</span></span><br><span class="line">        ContentValues values = <span class="keyword">new</span> ContentValues();</span><br><span class="line">        values.put(<span class="string">"mode"</span>,mode);</span><br><span class="line">        <span class="comment">//  ava.lang.String table, android.content.ContentValues values, java.lang.String whereClause, java.lang.String[] whereArgs</span></span><br><span class="line">        <span class="comment">//进行更新操作(表的名称，要更新的值，要更新的字段，依据什么字段更新)</span></span><br><span class="line">        writableDatabase.update(<span class="string">"blackname"</span>,values,<span class="string">"mode=?"</span>,<span class="keyword">new</span> String[]&#123;phone&#125;);</span><br><span class="line">        writableDatabase.close();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 返回的就是数据库中所有的号码以及类型</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Blacknamebin&gt; <span class="title">FindAll</span><span class="params">()</span></span>&#123;</span><br><span class="line">        SQLiteDatabase writableDatabase = blackNamedb.getWritableDatabase();</span><br><span class="line">        <span class="comment">//查询(表名，查询的字段,查询的条件，查询的条件，查询的条件，查询的条件，  查询出来排序的方法 默认为正序，desc为倒叙)</span></span><br><span class="line">        <span class="comment">//拿到游标</span></span><br><span class="line">        Cursor query = writableDatabase.query(<span class="string">"blackname"</span>, <span class="keyword">new</span> String[]&#123;<span class="string">"phone"</span>, <span class="string">"mode"</span>&#125;, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="string">"_id desc"</span>);</span><br><span class="line">        <span class="comment">//创建一个集合</span></span><br><span class="line">        List&lt;Blacknamebin&gt; blackname = <span class="keyword">new</span> ArrayList&lt;Blacknamebin&gt;();</span><br><span class="line">        <span class="keyword">while</span> (query.moveToNext())&#123;</span><br><span class="line">            <span class="comment">//生成一个BIN类放常用字段</span></span><br><span class="line">            Blacknamebin blacknamebin = <span class="keyword">new</span> Blacknamebin();</span><br><span class="line">            blacknamebin.phone = query.getString(<span class="number">0</span>);</span><br><span class="line">            blacknamebin.mode = query.getString(<span class="number">1</span>);</span><br><span class="line">            System.out.println(<span class="string">"blacknamebin.phone"</span>+query.getString(<span class="number">0</span>)+<span class="string">"````````````blacknamebin.mode"</span>+query.getString(<span class="number">1</span>));</span><br><span class="line">            blackname.add(blacknamebin);</span><br><span class="line">        &#125;</span><br><span class="line">        query.close();</span><br><span class="line">        writableDatabase.close();</span><br><span class="line">        <span class="keyword">return</span> blackname;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Blacknamebin&gt; <span class="title">FindOther</span><span class="params">(<span class="keyword">int</span> index)</span></span>&#123;</span><br><span class="line">        SQLiteDatabase writableDatabase = blackNamedb.getWritableDatabase();</span><br><span class="line">        Cursor query = writableDatabase.rawQuery(<span class="string">"select phone,mode from blackname order by _id desc limit ?,10;"</span>, <span class="keyword">new</span> String[]&#123;index+<span class="string">""</span>&#125;);</span><br><span class="line">        List&lt;Blacknamebin&gt; blackname = <span class="keyword">new</span> ArrayList&lt;Blacknamebin&gt;();</span><br><span class="line">        <span class="keyword">while</span> (query.moveToNext())&#123;</span><br><span class="line">            <span class="comment">//生成一个BIN类放常用字段</span></span><br><span class="line">            Blacknamebin blacknamebin = <span class="keyword">new</span> Blacknamebin();</span><br><span class="line">            blacknamebin.phone = query.getString(<span class="number">0</span>);</span><br><span class="line">            blacknamebin.mode = query.getString(<span class="number">1</span>);</span><br><span class="line">            System.out.println(<span class="string">"blacknamebin.phone"</span>+query.getString(<span class="number">0</span>)+<span class="string">"````````````blacknamebin.mode"</span>+query.getString(<span class="number">1</span>));</span><br><span class="line">            blackname.add(blacknamebin);</span><br><span class="line">        &#125;</span><br><span class="line">        query.close();</span><br><span class="line">        writableDatabase.close();</span><br><span class="line">        <span class="keyword">return</span> blackname;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getCount</span><span class="params">()</span></span>&#123;</span><br><span class="line">        SQLiteDatabase writableDatabase = blackNamedb.getWritableDatabase();</span><br><span class="line">        Cursor cursor = writableDatabase.rawQuery(<span class="string">"select count(*) from blackname;"</span>, <span class="keyword">null</span>);</span><br><span class="line">        <span class="keyword">int</span> count =<span class="number">0</span> ;</span><br><span class="line">        <span class="keyword">if</span> (cursor.moveToNext())&#123;</span><br><span class="line">            count = cursor.getInt(<span class="number">0</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        cursor.close();</span><br><span class="line">        writableDatabase.close();</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Anderoid基础/" rel="tag"># Anderoid基础</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/11/29/前端JavaScript（二）/" rel="next" title="前端JavaScript（二）">
+                <i class="fa fa-chevron-left"></i> 前端JavaScript（二）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/11/30/Android基础（二）/" rel="prev" title="Android基础（二）">
+                Android基础（二） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/me.jpg"
+                alt="JokerLiang" />
+            
+              <p class="site-author-name" itemprop="name">JokerLiang</p>
+              <p class="site-description motion-element" itemprop="description">永远年轻，永远热泪盈眶。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">71</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/LoverJoker" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/lover-easy-7/activities" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/2292572142/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-globe"></i>微博</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Friends
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.knight.ac.cn/" title="Knight" target="_blank">Knight</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://lzllzl.cn/" title="Zayvion" target="_blank">Zayvion</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://chen97.com/" title="Chens" target="_blank">Chens</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义对话框"><span class="nav-number">1.</span> <span class="nav-text">自定义对话框</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ListView的优化"><span class="nav-number">2.</span> <span class="nav-text">ListView的优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ConvertView的复用"><span class="nav-number">2.1.</span> <span class="nav-text">ConvertView的复用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#findViewById的复用-ViewHolder的使用"><span class="nav-number">2.2.</span> <span class="nav-text">findViewById的复用 ViewHolder的使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#将流转换为字符串"><span class="nav-number">3.</span> <span class="nav-text">将流转换为字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务端JSON写法"><span class="nav-number">4.</span> <span class="nav-text">服务端JSON写法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSON解析（不适用Gson）"><span class="nav-number">5.</span> <span class="nav-text">JSON解析（不适用Gson）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用开源框架Xutils下载"><span class="nav-number">6.</span> <span class="nav-text">使用开源框架Xutils下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#监听来电事件"><span class="nav-number">7.</span> <span class="nav-text">监听来电事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#监听用户手势"><span class="nav-number">8.</span> <span class="nav-text">监听用户手势</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android中数据库的创建"><span class="nav-number">9.</span> <span class="nav-text">Android中数据库的创建</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">JokerLiang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

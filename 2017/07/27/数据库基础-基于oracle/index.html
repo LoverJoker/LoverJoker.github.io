@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="数据库," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="人生若只如初见 何事秋风悲画扇  基础 包含null的表达式都为null。 空值永远不等于空值。 如果集合中含有null，不能使用notiin，可以使用In dual表为空表，使用在与表没关系中的select语句中。 ||表示连字符相当于JAVA中的+。 双引号表示列的别名，单引号才表示日期和字符。 where查询时字符大小写敏感，日期格式敏感 where查询时between a and b ,">
+<meta name="keywords" content="数据库">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库基础-基于oracle">
+<meta property="og:url" content="http://yoursite.com/2017/07/27/数据库基础-基于oracle/index.html">
+<meta property="og:site_name" content="JokerLiang">
+<meta property="og:description" content="人生若只如初见 何事秋风悲画扇  基础 包含null的表达式都为null。 空值永远不等于空值。 如果集合中含有null，不能使用notiin，可以使用In dual表为空表，使用在与表没关系中的select语句中。 ||表示连字符相当于JAVA中的+。 双引号表示列的别名，单引号才表示日期和字符。 where查询时字符大小写敏感，日期格式敏感 where查询时between a and b ,">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-07-27T13:27:09.322Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据库基础-基于oracle">
+<meta name="twitter:description" content="人生若只如初见 何事秋风悲画扇  基础 包含null的表达式都为null。 空值永远不等于空值。 如果集合中含有null，不能使用notiin，可以使用In dual表为空表，使用在与表没关系中的select语句中。 ||表示连字符相当于JAVA中的+。 双引号表示列的别名，单引号才表示日期和字符。 where查询时字符大小写敏感，日期格式敏感 where查询时between a and b ,">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/07/27/数据库基础-基于oracle/"/>
+
+
+
+
+
+  <title>数据库基础-基于oracle | JokerLiang</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">JokerLiang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">永远年轻，永远热泪盈眶。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/27/数据库基础-基于oracle/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JokerLiang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/me.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JokerLiang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">数据库基础-基于oracle</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-27T21:23:30+08:00">
+                2017-07-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>人生若只如初见 何事秋风悲画扇</p>
+</blockquote>
+<h3 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h3><ul>
+<li>包含null的表达式都为null。</li>
+<li>空值永远不等于空值。</li>
+<li>如果集合中含有null，不能使用notiin，可以使用In</li>
+<li>dual表为空表，使用在与表没关系中的select语句中。</li>
+<li>||表示连字符相当于JAVA中的+。</li>
+<li>双引号表示列的别名，单引号才表示日期和字符。</li>
+<li>where查询时字符大小写敏感，日期格式敏感</li>
+<li>where查询时between a and b ,含有边界，小的在钱，大的在后。</li>
+<li>where查询时in(a,b)查询在ab,集合中。</li>
+<li>模糊查询Like中，%表示任意长度的任意字符，_表示一个长度的任意字符。<a id="more"></a></li>
+<li>select * from user where name like ‘%_%’ escape ‘\’ : 使用escape申明一个转义字符，将_转义。</li>
+<li>oracle自动开启事务，而mysql是手动开启。</li>
+<li>where语句解析的顺序是从右往左。</li>
+<li>order by 语句写在select语句结尾，order by + 列、序号、别名、表达式。</li>
+<li>order by作用于后面所有的列，先按照第一个列拍寻，再后面的列，但是desc降序只作用于离他最近的列。</li>
+<li>日期加减上数字任为日期，数字单位是天，两个日期相减，返回的是他们之间差的天数。日期之间是不可以相加。</li>
+<li>组函数会自动滤空，使用nvl嵌套能防止这个问题。</li>
+<li>在select语句中，所有未包含在组函数中的列，应该包含在group by子句中。</li>
+<li>多个列的分组：先按照第一个列分组，如果相同，再按照第二个列，以此类推。</li>
+<li>having 语句 卸载group by语句后面，过滤分组。</li>
+<li>where 和having 区别 ： where语句能使用组函数，where在group by之前。为了sql性能尽量使用where语句。</li>
+<li>group by rollup(a,b) = group by a,b +group by a +没有group by</li>
+<li>外连接：希望把某些不成立的记录，任然包含在最后的结果中。</li>
+<li>左外连接：当where  e.a=c.a 不成立的时候，等号左边的表任然被包含在结果中。写法：where e.a(+)=c.a。又外连接相反。</li>
+<li>自链接：通过起不同的别名，将一张表看作两张表。</li>
+<li>子查询：就是select语句嵌套查询，子select语句作为父select语句的条件。</li>
+<li>子查询：子select需要加括号。</li>
+<li>一般不在子查询中排序，但是在TOP-N问题中，必须对子查询排序。</li>
+<li>单行子查询：子查询只返回一条记录，多行相反。</li>
+<li>性能方面：多表查询好于多表查询。</li>
+<li>in:在集合中，any:和集合中的任意一个比较，ALL：和集合中的所有值进行比较。</li>
+<li>集合运算：参与运算的各个集合必须类型一样，列数相同</li>
+<li>采用第一个集合作为最后的表头。</li>
+<li>order by 永远在最后。</li>
+<li>尽量不使用集合运算。</li>
+<li>oracle中&amp;name为占位符，和JDBC中的？一样。</li>
+<li>create index [indexname] on [table] (列名字)<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3></li>
+<li>substr(a,b)从a中，取b位，substr(a,b，c)从a中，b开始取，取c位，</li>
+<li>length():取字符数，lengthb()：取字节数。</li>
+<li>instr(a,b)在a中，查找b。</li>
+<li>round(a,b)a中保留b位小数，四舍五入。</li>
+<li>select sysdate from dual :查询系统时间。</li>
+<li>tochar(a,b)将a按照b的格式转化位字符串，select to-char(sysdate,’yyyy-mmydd hh24:mi:ss’)</li>
+<li>months_between(a,b)返回a和b日期中相差的月数，月数是准确值。</li>
+<li>add_months(a,b)在某个日期上加上b个月。</li>
+<li>next_day(a,b)从a日期开始下一个星期b是多少号。</li>
+<li>转换函数to_char,to_date,to_number都接受两个参数，第一个是需要转化的字节，第二个为格式。</li>
+<li>nvl(a,b)当a为null，的时候返回b，滤空函数。</li>
+<li>nvl2(a,b,c)当a为空的时候返回c，否则返回b。</li>
+<li>nullif(a,b)当a=b的时候，返回Null，否则返回a.</li>
+<li>coalese(a,b,c….)从左到右，找到第一个不为null的值。</li>
+<li>case expr when a then b when c then d 类似与if else 当a=expr时，执行b.这个是sql99标准。</li>
+<li>decode(条件，’判断的值’,相对前面值执行结果，’判断的值’,相对前面值执行结果,’都不符合执行的值’) ifelse</li>
+<li>oracle临时表中，会话提交，事务提交，数据会被清空。</li>
+<li>相关子查询：就是把主查询查询出来的值作为参数传到子查询里面去。</li>
+</ul>
+<h3 id="oracle分页"><a href="#oracle分页" class="headerlink" title="oracle分页"></a>oracle分页</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">--oracle分页(Pageing Query)</span><br><span class="line"></span><br><span class="line">select *</span><br><span class="line">from 	(select rownum r,e1.*</span><br><span class="line"> from (select * from emp order by sal) e1</span><br><span class="line">	 where rownum &lt;=8</span><br><span class="line">)</span><br><span class="line">where r &gt;=5;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数据库/" rel="tag"># 数据库</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/06/29/E3-Six/" rel="next" title="E3-Six">
+                <i class="fa fa-chevron-left"></i> E3-Six
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/27/pl-sql/" rel="prev" title="pl/sql">
+                pl/sql <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/me.jpg"
+                alt="JokerLiang" />
+            
+              <p class="site-author-name" itemprop="name">JokerLiang</p>
+              <p class="site-description motion-element" itemprop="description">永远年轻，永远热泪盈眶。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">71</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/LoverJoker" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/lover-easy-7/activities" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/2292572142/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-globe"></i>微博</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Friends
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.knight.ac.cn/" title="Knight" target="_blank">Knight</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://lzllzl.cn/" title="Zayvion" target="_blank">Zayvion</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://chen97.com/" title="Chens" target="_blank">Chens</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基础"><span class="nav-number">1.</span> <span class="nav-text">基础</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数"><span class="nav-number">2.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#oracle分页"><span class="nav-number">3.</span> <span class="nav-text">oracle分页</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">JokerLiang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
