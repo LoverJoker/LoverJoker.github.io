@@ -253,6 +253,147 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/08/python-模拟登陆requests库和BeautifulSoup库简单用法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JokerLiang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/me.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JokerLiang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/08/python-模拟登陆requests库和BeautifulSoup库简单用法/" itemprop="url">python-模拟登陆requests库和BeautifulSoup库简单用法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-08T13:27:58+08:00">
+                2018-04-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> requests;</span><br><span class="line"><span class="keyword">import</span> http.cookiejar <span class="keyword">as</span> cooklab</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup ;</span><br><span class="line"></span><br><span class="line"><span class="comment">#构建一个请求，保证下面所有的请求都使用这一个。</span></span><br><span class="line">session =  requests.session();</span><br><span class="line">session.cookies = cooklab.LWPCookieJar(filename=<span class="string">"cookie.txt"</span>);</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    session.cookies.load(ignore_discard=<span class="keyword">True</span>);</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    print(<span class="string">"Cookie加载失败"</span>)</span><br><span class="line">agent = <span class="string">"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36"</span></span><br><span class="line">header = &#123;</span><br><span class="line">    <span class="string">"HOST"</span>: <span class="string">"jw2.csmzxy.com:8088"</span>,</span><br><span class="line">    <span class="string">"User-Agent"</span> : agent,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getParamer</span><span class="params">()</span>:</span></span><br><span class="line">    codeResponse = session.get(url=<span class="string">"http://jw2.csmzxy.com:8088/CheckCode.aspx"</span>,headers=header);</span><br><span class="line">    response = session.get(url=<span class="string">"http://jw2.csmzxy.com:8088/"</span>,headers=header);</span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">"qrcode.img"</span>,<span class="string">"wb"</span>) <span class="keyword">as</span> f:</span><br><span class="line">        f.write(codeResponse.content)</span><br><span class="line">        f.close();</span><br><span class="line">    <span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">         img = Image.open(<span class="string">"qrcode.img"</span>);</span><br><span class="line">         img.show();</span><br><span class="line">         img.close();</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    verification = input(<span class="string">"请输入验证码 \n &gt;"</span>);</span><br><span class="line">    <span class="comment">#提取其他值</span></span><br><span class="line">    soup = BeautifulSoup(response.text);</span><br><span class="line">    print(response.text)</span><br><span class="line">    __VIEWSTATEGENERATOR = soup.select(<span class="string">"input[name='__EVENTVALIDATION']"</span>)[<span class="number">0</span>].get(<span class="string">"value"</span>);</span><br><span class="line">    __VIEWSTATE = soup.select(<span class="string">"input[name='__VIEWSTATE']"</span>)[<span class="number">0</span>].get(<span class="string">"value"</span>);</span><br><span class="line">    <span class="keyword">return</span> verification , __VIEWSTATE,__VIEWSTATEGENERATOR ;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">jiaoWuLogin</span><span class="params">()</span>:</span></span><br><span class="line">    paramer = getParamer()</span><br><span class="line">    print(paramer)</span><br><span class="line">    postData = &#123;</span><br><span class="line">        <span class="string">"__EVENTVALIDATION"</span>:paramer[<span class="number">2</span>],</span><br><span class="line">        <span class="string">"__VIEWSTATE"</span>:paramer[<span class="number">1</span>],</span><br><span class="line">        <span class="string">"RadioButtonList1"</span>:<span class="string">"学生"</span>,</span><br><span class="line">        <span class="string">"TextBox1"</span>:<span class="string">"1525123719"</span>,</span><br><span class="line">        <span class="string">"TextBox2"</span>:<span class="string">"imahero"</span>,</span><br><span class="line">        <span class="string">"TextBox3"</span>:paramer[<span class="number">0</span>],</span><br><span class="line">        <span class="string">"Button1"</span>:<span class="string">""</span>,</span><br><span class="line">    &#125;</span><br><span class="line">    response = session.post(url=<span class="string">"http://jw2.csmzxy.com:8088/default2.aspx"</span>,headers=header,data=postData);</span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">"index.html"</span>,<span class="string">"wb"</span>) <span class="keyword">as</span> f:</span><br><span class="line">        f.write(response.text.encode());</span><br><span class="line">        f.close();</span><br><span class="line">    session.cookies.save();</span><br><span class="line"></span><br><span class="line">jiaoWuLogin();</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/02/PythonWeb-django的session、中间件、缓存Cache/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1591,153 +1732,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/31/2017-12-31/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="JokerLiang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/me.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JokerLiang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/31/2017-12-31/" itemprop="url">2017-12-31</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-31T20:38:21+08:00">
-                2017-12-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/我的青春流水账/" itemprop="url" rel="index">
-                    <span itemprop="name">我的青春流水账</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;现在是2017年12月31日 19点24分，抓住了2017的小尾巴，去年在手机日历上弄了个日程，说要写年终总结，结果去年的都还没开始动，今年的又来了。不想今年也留下这个遗憾，所以写下这篇总结。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2017年的上半年，我还是大二的下学期，你看时间过的好快，一不留神我现在又工作了。上半年我做的最正确的决定就是和Knight一起去泡了两个月的图书馆，我非常感谢Knight，那两个月我真的学到了太多太多，不仅仅是专业方面的，还有其他方面，比如：吃饭敬酒的时候酒杯要比对方低。Knight教了我很多。最重要的是收获了几段友情，Knight,Chens,Zayvion。这应该是我第一次正确的打出了Zayvion，因为刚才我很有心的查了一下。他们几个应该是我大学最重要的几个人之一。紧接着，马上就是移动互联网比赛了，现在想想还是有点遗憾，后悔当初没有认真复习，“活在当下，后悔的事情以后再考虑”，这几个字恐怕当时已经被我们几个给理解透了。最后得了个省赛二等奖。凭借着比赛这段期间和老师的接触，我们开始变得很飘了，各种上课要去不去，回来以后就开始接触各种创业比赛，大学生创业果然不靠谱，创业靠的最重要的还是Idea和社会经历，这些读书的时候真的不能具备，Chens被拉去参加了一个卖茶叶的项目，搞了大半年，好像是这个月才结束的，我们还弄了个农家Stay的项目，匠新出品，最后居然还得了奖，不过最重要的奖金到现在还没发。记录下，这个时期我最喜欢听的音乐是《如斯》，我非常喜欢这两个词，可是我现在还是没能理解透，看来学识还不够境界。到这里，已经要放暑假了，时间真是过的太快了，感觉没有发生什么就逝去了。暑假在家里屋里人总是念，我就和AIJGNAIL去做了我人生中第一份兼职，是去那种车间工厂里面，我做了5分钟就不想做了，最后我坚持了1个小时，现在想起来还有点想笑。然后就开始准备找工作，开始制作简历，在BOSS和拉钩上面投，第一家叫做XIANSHANGWANGLUO的公司，幸好那时候没去，因为过了一个月后我在新闻上看到这家公司被查封了，原来他们是做的刷单软件的，第二家是袁家岭的，不记得叫什么去了，反正工资太低了就也没去，暑假在家总要做一点事情，所以和Knight,Chens一起初步完成了njstay项目，说起来这个项目很有意义，因为这算是我的正式的第一个‘孩子’，不过夭折了的那种。过了暑假就是大三了，大三就准备要找工作了，很感谢那时候努力的自己，我们学院一个老师主动要我去他们公司工作，非常非常开心，因为这意味着我的第一份工作已经到手了，不过非常对不起Long老师的是，我最后没有选择去他们公司，来了DAOKIN，DAOKIN这个公司给我的感觉真的是和家一样，同事，工作氛围都挺好。然后就到了11月份，我20岁，对我很重要的一个人也是20岁，很开心她又对我笑了。我是比较喜欢安稳一点的生活的，可真正上班了才发现每天几乎都做的同样的事情，感觉又有点疲倦，2018我希望我能多出去走走。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;再说下2018我的计划，有可能仅仅是计划的那种，1：多出去看看世界，最好的可能就是带上小姐姐一起去。2：如果小姐姐给机会的话，好好照顾小姐姐。3：多看书，做一个有涵养的人。4：学自己的第二门编程语言，充实自己。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;时间会消磨一切，而文字可以记录一切。人生每天都在告别，也每天都在面对。告别昨天，面对今天；告别2017，面对2018。2018会怎么样，谁也不知道，2017谢谢你们的陪伴！<br><img src="http://p1tsofs0x.bkt.clouddn.com/date.png" alt=""><br><img src="http://p1tsofs0x.bkt.clouddn.com/Chens.jpg" alt=""><br><img src="http://p1tsofs0x.bkt.clouddn.com/knight.jpg" alt=""><br><img src="http://p1tsofs0x.bkt.clouddn.com/joker.jpg" alt=""><br><img src="http://p1tsofs0x.bkt.clouddn.com/zayvion.jpg" alt=""></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1787,7 +1786,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">70</span>
+                  <span class="site-state-item-count">71</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
