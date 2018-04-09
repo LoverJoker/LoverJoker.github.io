@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/15/Servlet/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/15/RequesrAndResponse/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JokerLiang">
@@ -272,7 +272,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/01/15/Servlet/" itemprop="url">Servet</a></h1>
+                <a class="post-title-link" href="/2017/01/15/RequesrAndResponse/" itemprop="url">RequesrAndResponse</a></h1>
         
 
         <div class="post-meta">
@@ -345,16 +345,11 @@
 
       
         
-          <h3 id="实现serVlet接口的方式"><a href="#实现serVlet接口的方式" class="headerlink" title="实现serVlet接口的方式"></a>实现serVlet接口的方式</h3><ul>
-<li>实现接口</li>
-<li>继承GenericServlet</li>
-<li>继承HTTPServlet<h3 id="ServletConfig"><a href="#ServletConfig" class="headerlink" title="ServletConfig"></a>ServletConfig</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">String getInitParameter(String name)  获得配置信息 根据键获得值</span><br><span class="line">	  </span><br><span class="line">Enumeration getInitParameterNames() 获得配置信息  获得所有键	   </span><br><span class="line">String getServletName()  获得servlet的名称 &lt;servlet-name&gt;AServlet&lt;/servlet-name&gt;</span><br><span class="line"></span><br><span class="line"> ServletContext getServletContext() 该方法返回ServletContext对象.</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="Servlet细节"><a href="#Servlet细节" class="headerlink" title="Servlet细节"></a>Servlet细节</h3>
+          <p>###　Response ###<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Response对象,用于生成http响应信息. 对于开发人员来讲,就是 向response 对象中添加信息即可.</span><br><span class="line"></span><br><span class="line">	响应首行</span><br><span class="line">		HTTP/1.1  200 OK</span><br><span class="line">		void setStatus(int sc) </span><br><span class="line">		void setStatus(int sc, String sm) Deprecated(过时)</span><br><span class="line">		void sendError(int sc) </span><br><span class="line">        void sendError(int sc, String msg) </span><br><span class="line">		</span><br><span class="line"> 		</span><br><span class="line">	响应头</span><br><span class="line">		键:值</span><br><span class="line">		void setHeader(String name, String value)  设置键值对.</span><br><span class="line">				void setDateHeader(String name, long date) 设置键值对.</span><br><span class="line">				void setIntHeader(String name, int value)  设置键值对.</span><br><span class="line">		void addHeader(String name, String value) 添加键值对.</span><br><span class="line">			void addDateHeader(String name, long date)添加键值对.</span><br><span class="line">			void addIntHeader(String name, int value) 添加键值对.</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">	响应空行</span><br><span class="line">	响应正文</span><br><span class="line">		需要给浏览器的资源</span><br><span class="line">			getWriter(); 字符流.</span><br><span class="line">			getOutputStream() 字节流</span><br></pre></td></tr></table></figure></p>
+<h3 id="Request"><a href="#Request" class="headerlink" title="Request"></a>Request</h3>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/01/15/Servlet/#more" rel="contents">
+            <a class="btn" href="/2017/01/15/RequesrAndResponse/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
