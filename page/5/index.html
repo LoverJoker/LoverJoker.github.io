@@ -253,6 +253,176 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/17/数据库-oracle基础/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JokerLiang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/me.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JokerLiang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/05/17/数据库-oracle基础/" itemprop="url">数据库-oracle基础</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-17T08:02:17+08:00">
+                2017-05-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>人的一切痛苦，本质上都是对自己的无能的愤怒。</p>
+</blockquote>
+<h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><ul>
+<li>nal(a,b)当a为Null的时候取值b，当a不为null时。</li>
+<li>select * from money is null ,—–查询money字段为空值的记录</li>
+<li>oracle 别名 和Mysql 一样.</li>
+<li>sekect distinct money from emp —查询emp表中所有的钱的数量，去除重复。distinct这个关键字表示去重.</li>
+<li>在Oracle中单引号表示日期和字符，双引号表示列的别名。</li>
+<li>between a and b 查询大于等于a小于等于b的值</li>
+<li>like 模糊查询 %表示任意长度的任意字符串  _表示任意字符的一个字符串, \表示转义字符.</li>
+<li>在and语句中，where解析顺序 右—-&gt;左</li>
+<li>order by 后面 +列、表达式、别名、序号 + 排序规则 asc desc</li>
+<li>order by 作用于后面所有的列，先按照第一个列排序，再后面的列，desc降序 制作用于离他最近的列。</li>
+<li>nulls last 表示如果有空值，空值放在最后  select * from emp order by money desc nulls last  升序时没有问题。因为在oracle数据库中，null最大</li>
+<li>dual 为oracle中没有意义的空表</li>
+<li>去掉delect产生后的碎片 alter table &lt;表名&gt;mover 提高查询速度</li>
+<li>rownum 行号 select rownum from a ， rownum永远按照默认（即使排完序后行号也不变）的顺序，rownum只能使用小于，小于等于，不能用其他。</li>
+<li>top-n问题：select f<em> from (select </em> from a order by money desc) where rownum&lt;=3.</li>
+<li>所有包含于select列表中，而未包含于组函数中的列，都必须包含于GroupBy子句中。包含在Group子句中的列，不一定要包含在select中。</li>
+<li>多个列的分组：先按照第一个列分组，如果相同，再按照第二个列分组，以此类推。  </li>
+<li>having语句：从分组的基础上，过滤。select b avg(c) from table group by b having avg(c)&gt;2000.和where的区别是，having可以使用组函数（多行函数）。</li>
+<li>group by rollup(a,b) : 报表常用。</li>
+</ul>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/05/17/数据库-oracle基础/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/15/Crm总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1579,152 +1749,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/11/Hibernate三种查询方式/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="JokerLiang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/me.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JokerLiang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/04/11/Hibernate三种查询方式/" itemprop="url">Hibernate三种查询方式</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-11T15:44:28+08:00">
-                2017-04-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hibernate/" itemprop="url" rel="index">
-                    <span itemprop="name">Hibernate</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="原生SQL查询-复杂的业务查询"><a href="#原生SQL查询-复杂的业务查询" class="headerlink" title="原生SQL查询(复杂的业务查询)"></a>原生SQL查询(复杂的业务查询)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//原生SQL查询</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test4</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//基本查询 返回数组List</span></span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fun1</span><span class="params">()</span></span>&#123;</span><br><span class="line">		Session session = HibernateUtil.getCurrentSession();</span><br><span class="line">		Transaction tx = session.beginTransaction();</span><br><span class="line">		<span class="comment">//-----------------------------------------&gt;</span></span><br><span class="line">		<span class="comment">//书写SQL语句</span></span><br><span class="line">		String sql = <span class="string">"select * from cst_customer"</span>;</span><br><span class="line">		<span class="comment">//创建SQL查询对象</span></span><br><span class="line">		SQLQuery query = session.createSQLQuery(sql);</span><br><span class="line">		<span class="comment">//调用方法List返回Object数组</span></span><br><span class="line">		List&lt;Object[]&gt; list = query.list();</span><br><span class="line">		<span class="keyword">for</span>(Object[] obj : list)&#123;</span><br><span class="line">			System.out.println(Arrays.toString(obj));</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//-----------------------------------------&gt;</span></span><br><span class="line">		tx.commit();</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//基本查询 对象List</span></span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fun2</span><span class="params">()</span></span>&#123;</span><br><span class="line">		Session session = HibernateUtil.getCurrentSession();</span><br><span class="line">		Transaction tx = session.beginTransaction();</span><br><span class="line">		<span class="comment">//-----------------------------------------&gt;</span></span><br><span class="line">		<span class="comment">//书写SQL语句</span></span><br><span class="line">		String sql = <span class="string">"select * from cst_customer"</span>;</span><br><span class="line">		<span class="comment">//创建SQL查询对象</span></span><br><span class="line">		SQLQuery query = session.createSQLQuery(sql);</span><br><span class="line">		<span class="comment">//建立关联 将结果集封装到指定的对象</span></span><br><span class="line">		query.addEntity(Customer.class);</span><br><span class="line">		List&lt;Customer&gt; list = query.list();</span><br><span class="line">		System.out.println(list);</span><br><span class="line">		<span class="comment">//-----------------------------------------&gt;</span></span><br><span class="line">		tx.commit();</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//条件查询</span></span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fun3</span><span class="params">()</span></span>&#123;</span><br><span class="line">		Session session = HibernateUtil.getCurrentSession();</span><br><span class="line">		Transaction tx = session.beginTransaction();</span><br><span class="line">		<span class="comment">//-----------------------------------------&gt;</span></span><br><span class="line">		<span class="comment">//书写SQL语句</span></span><br><span class="line">		String sql = <span class="string">"select * from cst_customer where cust_id =?"</span>;</span><br><span class="line">		<span class="comment">//创建SQL查询对象</span></span><br><span class="line">		SQLQuery query = session.createSQLQuery(sql);</span><br><span class="line">		<span class="comment">//设置参数</span></span><br><span class="line">		query.setParameter(<span class="number">0</span>, <span class="number">1</span>);</span><br><span class="line">		<span class="comment">//建立关联 将结果集封装到指定的对象</span></span><br><span class="line">		query.addEntity(Customer.class);</span><br><span class="line">		Customer c = (Customer) query.uniqueResult();</span><br><span class="line">		System.out.println(c);</span><br><span class="line">		<span class="comment">//-----------------------------------------&gt;</span></span><br><span class="line">		tx.commit();</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//分页查询</span></span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fun4</span><span class="params">()</span></span>&#123;</span><br><span class="line">		Session session = HibernateUtil.getCurrentSession();</span><br><span class="line">		Transaction tx = session.beginTransaction();</span><br><span class="line">		<span class="comment">//-----------------------------------------&gt;</span></span><br><span class="line">		<span class="comment">//书写SQL语句</span></span><br><span class="line">		String sql = <span class="string">"select * from cst_customer limit ? , ? "</span>;</span><br><span class="line">		<span class="comment">//创建SQL查询对象</span></span><br><span class="line">		SQLQuery query = session.createSQLQuery(sql);</span><br><span class="line">		<span class="comment">//设置参数</span></span><br><span class="line">		query.setParameter(<span class="number">0</span>, <span class="number">1</span>);</span><br><span class="line">		query.setParameter(<span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">		<span class="comment">//建立关联 将结果集封装到指定的对象</span></span><br><span class="line">		query.addEntity(Customer.class);</span><br><span class="line">		List&lt;Customer&gt; list = query.list();</span><br><span class="line">		System.out.println(list);</span><br><span class="line">		<span class="comment">//-----------------------------------------&gt;</span></span><br><span class="line">		tx.commit();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/11/Hibernate三种查询方式/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1779,7 +1803,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">75</span>
+                  <span class="site-state-item-count">76</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
